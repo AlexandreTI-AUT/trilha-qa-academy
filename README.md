@@ -20,7 +20,7 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 ## 🗺️ Índice de Sprints (Roadmap)
 
 ### 🟢 Fase 1: Fundamentos & Mindset
-* [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/README.md) *(Disponível)*
+* [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/) *(Disponível)*
 * **Sprint 02:** Testes Manuais, Cenários e Estratégias *(Em breve)*
 
 ### 🔵 Fase 2: Mão na Massa (Testes e Código)
