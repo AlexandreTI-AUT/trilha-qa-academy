@@ -5,7 +5,7 @@ Bem-vindo(a) ao repositório oficial da **Trilha QA Academy**!
 Nossa missão é transformar iniciantes e testadores manuais em **Engenheiros de Qualidade de Software (QA)** de alto nível, com mentalidade preventiva (Shift-Left Testing) e foco em automação.
 
 > **Professor:** Alexandre Silva (Quality Architect & Senior SDET)  
-> **Canal no YouTube:** [Inscreva-se na Trilha QA Academy](https://www.youtube.com/@TrilhaQAAcademy)
+> **Canal no YouTube:** [Inscreva-se na Trilha QA Academy](https://www.youtube.com/@trilha-qa-academy)
 
 ---
 
