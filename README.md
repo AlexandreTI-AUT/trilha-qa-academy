@@ -32,10 +32,9 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 * **Sprint 06:** Pipeline e CI/CD com GitHub Actions *(Em breve)*
 
 ---
-
 ## 🎯 Como entregar seus desafios práticos?
 Ao final de cada Sprint, você terá um projeto prático. Para enviar o seu projeto e receber feedback:
-1. Vá na aba **[Issues](../../issues)** deste repositório.
+1. Vá na aba **[Issues](https://github.com/alexandreti-aut/trilha-qa-academy/issues)** deste repositório.
 2. Clique no botão verde **New Issue**.
 3. Selecione o template **"🚀 Entrega de Desafio Prático"**.
 4. Preencha com os seus dados e o link da sua solução.
