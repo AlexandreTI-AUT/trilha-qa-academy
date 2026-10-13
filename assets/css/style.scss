@@ -2,3 +2,18 @@
 ---
 @import "{{ site.theme }}";
 
+header {
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+    border-bottom: 2px solid #00f0ff;
+    /* Um toque extra: uma linha ciano a separar o banner da página */
+}
+
+/* Esconde o texto padrão cinzento para não ficar por cima do texto da sua imagem */
+header h1,
+header h2,
+header p {
+    display: none;
+}

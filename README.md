@@ -1,5 +1,3 @@
-![Banner Trilha QA Academy](./assets/images/banner.jpg)
-
 # 🚀 Trilha QA Academy
 
 Bem-vindo(a) ao repositório oficial da **Trilha QA Academy**! 
