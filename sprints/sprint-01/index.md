@@ -1,3 +1,5 @@
+![Banner Trilha QA Academy](../../assets/images/banner-site.jpg)
+
 # 🚀 Sprint 01: Fundamentos de Quality Assurance & Mindset
 
 **Duração:** 2 Semanas  
