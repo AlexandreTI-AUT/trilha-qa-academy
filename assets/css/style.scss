@@ -3,36 +3,19 @@
 @import "{{ site.theme }}";
 
 header {
-    background-image: url('../images/banner.jpg');
+    /* Aponta para a nova imagem recortada */
+    background-image: url('../images/banner-site.jpg');
 
-    /* Zoom estratégico na imagem para cortar as enormes margens vazias de cima e de baixo */
-    background-size: 170% auto;
-
-    /* Centraliza na horizontal e ajusta ligeiramente na vertical para focar na faixa de texto/ícones */
-    background-position: center 52%;
-
-    /* Evita que a imagem se repita caso o ecrã seja muito grande */
-    background-repeat: no-repeat;
-
-    /* Garante uma altura mínima para dar destaque ao banner */
+    /* O "cover" agora vai funcionar perfeitamente porque a imagem não tem lixo visual */
+    background-size: cover;
+    background-position: center;
     min-height: 250px;
-
-    /* Efeito suave de transição */
-    box-sizing: border-box;
-
-    /* Linha ciano de separação no fundo para um acabamento profissional */
     border-bottom: 3px solid #00f0ff;
 }
 
-/* Esconde o texto padrão do template para que a nossa imagem seja o destaque único */
+/* Esconde o texto padrão */
 header h1,
 header h2,
 header p {
     display: none !important;
-}
-
-/* Ajusta o botão do GitHub no topo para não ficar em cima do logo */
-header .button {
-    background: rgba(0, 240, 255, 0.2);
-    border: 1px solid #00f0ff;
 }
