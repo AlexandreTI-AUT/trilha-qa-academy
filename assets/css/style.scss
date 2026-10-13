@@ -3,17 +3,26 @@
 @import "{{ site.theme }}";
 
 header {
-    /* Aponta para a nova imagem recortada */
     background-image: url('../images/banner-site.jpg');
 
-    /* O "cover" agora vai funcionar perfeitamente porque a imagem não tem lixo visual */
-    background-size: cover;
+    /* A solução: 'contain' obriga o navegador a mostrar a imagem inteira de ponta a ponta sem cortar */
+    background-size: contain;
+
     background-position: center;
-    min-height: 250px;
+
+    /* Evita que a imagem se repita como um mosaico */
+    background-repeat: no-repeat;
+
+    /* Reduzimos a altura mínima para abraçar melhor o formato estreito da nova imagem */
+    min-height: 180px;
+
+    /* Pinta o fundo do cabeçalho com o tom escuro do seu banner para disfarçar margens em ecrãs grandes */
+    background-color: #080f1e;
+
     border-bottom: 3px solid #00f0ff;
 }
 
-/* Esconde o texto padrão */
+/* Continua a esconder o texto padrão */
 header h1,
 header h2,
 header p {
