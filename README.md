@@ -23,7 +23,7 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 
 ### 🟢 Fase 1: Fundamentos & Mindset
 * [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/) *(Disponível)*
-* **Sprint 02:** Testes Manuais, Cenários e Estratégias *(Em breve)*
+* [Sprint 02: Teoria de Testes, Técnicas de Design & BDD](./sprints/sprint-02/) *(Disponível)*
 
 ### 🔵 Fase 2: Mão na Massa (Testes e Código)
 * **Sprint 03:** Introdução ao Código (Git e GitHub) *(Em breve)*
