@@ -30,8 +30,8 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 * **Sprint 04:** Desmistificando APIs com Postman *(Em breve)*
 
 ### 🟣 Fase 3: Engenharia e Automação
-* **Sprint 05:** Automação WEB e BACK com Cypress *(Em breve)*
-* **Sprint 06:** Pipeline e CI/CD com GitHub Actions *(Em breve)*
+* **Sprint 03:** Fundamentos de Testes WEB, DevTools e Prática no SauceDemo
+
 
 ---
 ## 🎯 Como entregar seus desafios práticos?
