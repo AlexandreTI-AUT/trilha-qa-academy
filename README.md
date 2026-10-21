@@ -25,13 +25,8 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 * [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/) *(Disponível)*
 * [Sprint 02: Teoria de Testes, Técnicas de Design & BDD](./sprints/sprint-02/) *(Disponível)*
 
-### 🔵 Fase 2: Mão na Massa (Testes e Código)
-* **Sprint 03:** Introdução ao Código (Git e GitHub) *(Em breve)*
-* **Sprint 04:** Desmistificando APIs com Postman *(Em breve)*
-
-### 🟣 Fase 3: Engenharia e Automação
-* **Sprint 03:** Fundamentos de Testes WEB, DevTools e Prática no SauceDemo
-
+### 🟣 Fase 2: Engenharia e Automação
+* [Sprint 03: Fundamentos de Testes WEB, DevTools e Prática no SauceDemo](./sprints/sprint-03/) *(Disponível)*
 
 ---
 ## 🎯 Como entregar seus desafios práticos?
