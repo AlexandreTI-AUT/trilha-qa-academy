@@ -39,10 +39,9 @@ Toda interação na web é baseada em um diálogo binário entre o cliente e o s
 1. Abra o navegador e acesse o site do SauceDemo (`www.saucedemo.com`).
 2. Digite um usuário qualquer e clique em login. No seu caderno, classifique se o comportamento gerou um *Request* e qual foi o provável *Status Code* de retorno do servidor.
 
----
-## 📹 [GRAVAR VÍDEO AQUI: Aula Prática - Arquitetura Web e Ciclo Request/Response]
-*(Dica para o vídeo: Faça um resumo dinâmico da teoria explicando a analogia do restaurante e abra o DevTools na aba Network para mostrar uma requisição real acontecendo ao vivo).*
----
+📹 **Assista à aula técnica completa:**
+<br>
+[![Aula Prática: Arquitetura, DevTools e Bugs](https://img.youtube.com/vi/Hr6MIvgKPwg/maxresdefault.jpg)](https://youtu.be/Hr6MIvgKPwg)
 
 ## 🛠️ Módulo 2: O Canivete Suíço do QA — Browser DevTools
 
