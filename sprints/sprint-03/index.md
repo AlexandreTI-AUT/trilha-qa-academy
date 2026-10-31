@@ -4,7 +4,7 @@
 
 Bem-vindo à Sprint 03 da **Trilha QA Academy**! Esta é a etapa em que você deixa de enxergar a internet apenas como um usuário comum e passa a dominá-la com os **olhos técnicos de um Engenheiro de Qualidade**. 
 
-Nesta sprint, vamos desvendar como a web funciona "por baixo do capô", aprender a utilizar as ferramentas de inspeção de mercado e executar o nosso primeiro ciclo profissional de testes funcionais e gestão de defeitos utilizando o laboratório **SauceDemo** (`www.saucedemo.com`).
+Nesta sprint, vamos desvendar como a web funciona "por baixo do capô", aprender a utilizar as ferramentas de inspeção de mercado e executar o nosso primeiro ciclo profissional de testes funcionais, testes de layout e gestão de defeitos utilizando o laboratório **SauceDemo** (`www.saucedemo.com`).
 
 ---
 
@@ -39,9 +39,13 @@ Toda interação na web é baseada em um diálogo binário entre o cliente e o s
 1. Abra o navegador e acesse o site do SauceDemo (`www.saucedemo.com`).
 2. Digite um usuário qualquer e clique em login. No seu caderno, classifique se o comportamento gerou um *Request* e qual foi o provável *Status Code* de retorno do servidor.
 
-📹 **Assista à aula técnica completa:**
+---
+
+📹 **Assista à aula técnica completa sobre o Módulo 1:**
 <br>
-[![Aula Prática: Arquitetura, DevTools e Bugs](https://img.youtube.com/vi/Hr6MIvgKPwg/maxresdefault.jpg)](https://youtu.be/Hr6MIvgKPwg)
+[![Aula Prática: Arquitetura e Ciclo Request/Response](https://img.youtube.com/vi/HkhKLm6ySQs/maxresdefault.jpg)](https://youtu.be/HkhKLm6ySQs)
+
+---
 
 ## 🛠️ Módulo 2: O Canivete Suíço do QA — Browser DevTools
 
@@ -51,11 +55,11 @@ As três abas essenciais para a sua carreira profissional são:
 
 ### 1. Aba Elements (O DOM / Estrutura da Página)
 *   **O que faz:** Exibe a árvore exata de código HTML e CSS que está a renderizar a tela visualizada naquele exato segundo.
-*   **Aplicações no dia a dia:** Essencial para futuras automações de teste (com Cypress ou Playwright), pois é nela que você investiga os seletores únicos (como atributos `data-test`, `id` ou `class`) para mapear os elementos que o seu script robô precisa manipular.
+*   **Aplicações no dia a dia:** Essencial para futuras automações de teste, pois é nela que você investiga os seletores únicos (como atributos `data-test`, `id` ou `class`) para mapear os elementos.
 
 ### 2. Aba Console (Monitoramento de Exceções)
 *   **O que faz:** O painel onde o navegador regista avisos operacionais e, criticamente, **erros e exceções de JavaScript** impressos em vermelho.
-*   **Aplicações no dia a dia:** Muitas vezes, um botão pode parecer apenas "morto" para o usuário, mas por trás dos panos há um erro crítico de script estourando no console. Auditar o console durante a execução de testes manuais é um diferencial de qualidade enorme.
+*   **Aplicações no dia a dia:** Muitas vezes, um botão pode parecer apenas "morto" para o usuário, mas por trás dos panos há um erro crítico de script estourando no console. Auditar o console é um diferencial de qualidade enorme.
 
 ### 3. Aba Network / Rede (O Fluxo de Dados)
 *   **O que faz:** Monitora em tempo real absolutamente todas as requisições HTTP disparadas ou recebidas pelo seu navegador.
@@ -63,36 +67,46 @@ As três abas essenciais para a sua carreira profissional são:
 
 ### 🎯 Atividade Prática do Módulo 2:
 1. Pressione `F12` no SauceDemo e navegue até a aba **Console**. Verifique se há algum aviso ou erro inicial ao carregar a página de login.
-2. Vá até a aba **Network**, limpe os registros (clicando no ícone de proibido/limpar) e realize o login. Clique na primeira requisição que aparecer e localize o *Status Code* `200 OK`.
+2. Vá até a aba **Network**, limpe os registros e realize o login. Clique na primeira requisição que aparecer e localize o *Status Code* `200 OK`.
 
 ---
-## 📹 [GRAVAR VÍDEO AQUI: Aula Prática - Dominando o Browser DevTools (Elements, Console e Network)]
-*(Dica para o vídeo: Grave a tela mostrando o F12, clique em cada aba [Elements, Console, Network] na prática e demonstre como auditar um erro de script).*
+
+📹 **Assista à aula técnica completa sobre o Módulo 2:**
+<br>
+[![Aula Prática: Dominando o Browser DevTools](https://img.youtube.com/vi/ID_DO_VIDEO_2/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_2)
+
 ---
 
-## 📱 Módulo 3: Responsividade e Redimensionamento de Tela
+## 📱 Módulo 3: Testes de Layout (UI) e Responsividade
 
-As aplicações corporativas modernas são multiplataforma. Os clientes acessam os sistemas através de computadores (*desktops*), tablets e smartphones com dezenas de resoluções diferentes.
+Um Engenheiro de Qualidade não testa apenas se o sistema funciona (Regra de Negócio), mas também se a interface foi construída com qualidade visual e se adapta a diferentes dispositivos.
 
-*   **O que validar:** Como o layout reage à contração e expansão da tela. Elementos não devem sobrepor-se, menus de navegação complexos devem recolher-se adequadamente (como o menu "hambúrguer") e os botões de ação principal devem permanecer sempre acessíveis.
-*   **Como testar utilizando o DevTools:** Ative o modo de simulação de dispositivos móveis no DevTools (`Ctrl + Shift + M` no Windows ou `Cmd + Shift + M` no Mac). Alterne entre resoluções de iPhone, iPad e telas personalizadas para auditar a adaptabilidade visual.
+### 1. Testes de Layout (UI - User Interface)
+*   **O que é:** Validar se a interface gráfica codificada pelos desenvolvedores (HTML/CSS) corresponde exatamente ao protótipo aprovado no time de design (Figma, Adobe XD).
+*   **O que o QA audita:** 
+    *   **Fidelidade Visual:** Cores (hexadecimais exatos), fontes, negritos e alinhamentos.
+    *   **Estrutura:** Elementos sobrepostos, textos que vazam do contêiner, imagens distorcidas ou cortadas.
+    *   **Estado dos Elementos:** Como o botão se comporta quando você passa o mouse por cima (*Hover*), quando clica (*Active*) ou quando está desativado (*Disabled*).
+
+### 2. Testes de Responsividade (Cross-Device)
+As aplicações corporativas modernas são multiplataforma. O cliente acessa tanto do computador (*desktop*) quanto de um iPhone ou tablet.
+*   **O que o QA audita:** Se os menus se adaptam (ex: virando um menu "hambúrguer"), se o texto continua legível sem precisar dar zoom, e se os botões continuam grandes o suficiente para serem clicados com o dedo na tela de toque.
+*   **Como testar usando o DevTools:** Ative o modo de simulação de dispositivos móveis no DevTools (`Ctrl + Shift + M` no Windows / `Cmd + Shift + M` no Mac).
 
 ### 🎯 Atividade Prática do Módulo 3:
-1. Ative o modo de dispositivos móveis no DevTools do SauceDemo.
-2. Alterne a visualização para um modelo de celular compacto (ex: iPhone SE).
-3. Valida se o catálogo de produtos e o menu lateral ajustam-se corretamente sem quebrar o layout ou esconder botões essenciais.
+1. Acesse o SauceDemo e ative o modo de dispositivos móveis no DevTools.
+2. Alterne a visualização para um celular compacto (ex: iPhone SE) e observe se o menu principal muda e se adapta.
+3. Observe o layout da tela de produtos: as imagens estão proporcionais? Há algum texto sobreposto aos botões?
 
 ---
-## 📹 [GRAVAR VÍDEO AQUI: Aula Prática - Testando a Responsividade no Mundo Real]
-*(Dica para o vídeo: Ative o modo mobile no DevTools ao vivo e demonstre como testar quebras de layout num e-commerce).*
+
+📹 **Assista à aula técnica completa sobre o Módulo 3:**
+<br>
+[![Aula Prática: Testes de Layout e Responsividade](https://img.youtube.com/vi/ID_DO_VIDEO_3/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_3)
+
 ---
 
 ## 📋 Módulo 4: Projeto Prático da Sprint (O Ciclo Funcional Completo)
-
----
-## 📹 [GRAVAR VÍDEO AQUI: Apresentação do Projeto Prático e Regras de Negócio]
-*(Dica para o vídeo: Apresente o PDF da User Story logo no início do módulo prático, mostre como estruturar a pasta `bugs/` no VS Code e explique o fluxo completo que o aluno deve seguir).*
----
 
 Neste projeto, você vai simular um dia de trabalho real dentro de uma squad ágil de tecnologia, executando a validação funcional de uma estória de usuário crítica no ambiente do **SauceDemo** (`www.saucedemo.com`).
 
@@ -105,20 +119,28 @@ O ponto de partida de qualquer ciclo de teste profissional é a especificação 
 Com base estritamente nos Critérios de Aceite da User Story:
 1. Abra o seu **VS Code**.
 2. Crie os arquivos `.feature` correspondentes (ex: `login.feature`).
-3. Escreva os cenários de teste estruturados em sintaxe Gherkin (`Given`, `When`, `Then`), cobrindo os caminhos principais (*happy path*) e os fluxos de exceção (utilizando particionamento de equivalência e análise de valor limite).
+3. Escreva os cenários de teste estruturados em sintaxe Gherkin (`Given`, `When`, `Then`), cobrindo os caminhos principais (*happy path*) e os fluxos de exceção.
 
 ### 🧪 Passo 3: Execução do Teste Funcional no SauceDemo
 1. Abra o navegador e acesse o ambiente do SauceDemo (`www.saucedemo.com`).
-2. Com o seu planejamento BDD estruturado ao lado, **execute os testes funcionais de forma manual e dirigida**, seguindo rigorosamente cada etapa descrita nos cenários.
-3. Utilize o **DevTools (F12)** posicionado na aba *Network* e *Console* para validar o comportamento sistémico e garantir que não ocorram falhas silenciosas de requisição.
+2. **Execute os testes funcionais de forma manual**, seguindo rigorosamente cada passo descrito nos cenários.
+3. Utilize o **DevTools (F12)** posicionado na aba *Network* e *Console* para validar o comportamento sistêmico e garantir que não ocorram falhas silenciosas.
 
 ### 🐞 Passo 4: Gestão de Defeitos e Organização no VS Code (`bugs/`)
-Durante a execução funcional, caso você identifique qualquer comportamento do sistema que **diverja** dos Critérios de Aceite estabelecidos na User Story:
-1. No seu **VS Code**, crie uma pasta dedicada chamada **`bugs/`** dentro do diretório do seu projeto.
-2. Para cada falha encontrada, crie um arquivo Markdown ou de texto (ex: `bug-01-login-vazio.md`).
+Durante a execução, caso identifique qualquer comportamento que **diverja** dos Critérios de Aceite, problemas de negócio ou de layout:
+1. No **VS Code**, crie uma pasta chamada **`bugs/`** dentro do diretório do seu projeto.
+2. Para cada falha encontrada, crie um arquivo (ex: `bug-01-login-vazio.md`).
 3. Documente o seu **Bug Report** seguindo o padrão rigoroso de mercado:
-   *   **Título Claro e Descritivo:** O que ocorreu e em qual seção do sistema.
-   *   **Ambiente:** Navegador, versão e sistema operacional.
-   *   **Passos para Reproduzir:** Sequência numérica exata de ações.
-   *   **Resultado Esperado vs. Resultado Atual:** A divergência encontrada em relação ao requisito.
-   *   **Evidências:** Capturas de tela (*prints*) que comprovem a falha e anexos de logs se necessário.
+    *   **Título Claro e Descritivo.**
+    *   **Ambiente:** Navegador e sistema operacional.
+    *   **Passos para Reproduzir:** Sequência exata de ações.
+    *   **Resultado Esperado vs. Resultado Atual.**
+    *   **Evidências:** Capturas de tela (*prints*).
+
+---
+
+📹 **Assista à apresentação do Projeto Prático:**
+<br>
+[![Apresentação do Projeto Prático e Regras de Negócio](https://img.youtube.com/vi/ID_DO_VIDEO_4/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_4)
+
+---
