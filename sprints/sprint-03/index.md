@@ -73,7 +73,7 @@ As três abas essenciais para a sua carreira profissional são:
 
 📹 **Assista à aula técnica completa sobre o Módulo 2:**
 <br>
-[![Aula Prática: Dominando o Browser DevTools](https://img.youtube.com/vi/ID_DO_VIDEO_2/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_2)
+[![Aula Prática: Dominando o Browser DevTools](https://img.youtube.com/vi/qiq4Jfduq0Y/maxresdefault.jpg)](https://youtu.be/qiq4Jfduq0Y)
 
 ---
 
