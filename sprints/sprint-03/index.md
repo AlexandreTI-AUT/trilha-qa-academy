@@ -102,7 +102,7 @@ As aplicações corporativas modernas são multiplataforma. O cliente acessa tan
 
 📹 **Assista à aula técnica completa sobre o Módulo 3:**
 <br>
-[![Aula Prática: Testes de Layout e Responsividade](https://img.youtube.com/vi/ID_DO_VIDEO_3/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_3)
+[![Aula Prática: Testes de Layout e Responsividade](https://img.youtube.com/vi/c-0Vc4lBf0I/maxresdefault.jpg)](https://youtu.be/c-0Vc4lBf0I)
 
 ---
 
