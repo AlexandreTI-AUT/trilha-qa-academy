@@ -140,10 +140,14 @@ Toda _Response_ retornada pelo servidor acompanha um código numérico padroniza
 
 O **Postman** é o cliente HTTP mais robusto do mercado para testar APIs.
 
-1.  Acesse o site oficial: [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
-2.  Baixe e instale a versão correspondente ao seu sistema operacional (Windows, macOS ou Linux).
-3.  Abra o Postman e faça login com a sua conta (ou crie uma conta gratuita para sincronizar suas coleções).
-4.  Crie uma nova **Workspace** compartilhada ou pessoal chamada `Trilha QA Academy`.
+> 📄 **Material de Apoio:** Baixe o documento com o passo a passo ilustrado para acompanhamento das telas:  
+> 👉 **[Baixar Guia de Instalação do Postman (PDF)](./Guia%20de%20Instala%C3%A7%C3%A3o%20do%20Postman.pdf)**
+
+1. Acesse o site oficial: [https://www.postman.com/downloads/](https://www.postman.com/downloads/).
+2. Baixe e instale a versão correspondente ao seu sistema operacional (Windows, macOS ou Linux).
+3. Consulte o **[Guia de Instalação do Postman (PDF)](./Guia%20de%20Instala%C3%A7%C3%A3o%20do%20Postman.pdf)** disponível na pasta da sprint para seguir a configuração passo a passo com prints do instalador.
+4. Abra o Postman e faça login com a sua conta (ou crie uma conta gratuita para sincronizar suas coleções).
+5. Crie uma nova **Workspace** compartilhada ou pessoal chamada `Trilha QA Academy`.
 
 ---
 
@@ -167,7 +171,7 @@ Para evitar uma bagunça de requisições soltas, todo QA profissional organiza 
 
 📹 **Assista à aula técnica completa sobre o Módulo 2:**
 <br>
-[![Aula Prática: Instalação do Postman e Estrutura JSON](https://img.youtube.com/vi/ID_DO_VIDEO_S04M02/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_S04M02)
+[![Aula Prática: Instalação do Postman e Estrutura JSON](https://img.youtube.com/vi/9_74hrUWLHI/maxresdefault.jpg)](https://youtu.be/9_74hrUWLHI)
 
 ---
 
