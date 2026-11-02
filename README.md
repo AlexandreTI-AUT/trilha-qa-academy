@@ -2,7 +2,7 @@
 
 # 🚀 Trilha QA Academy
 
-Bem-vindo(a) ao repositório oficial da **Trilha QA Academy**! 
+Bem-vindo(a) ao repositório oficial da **Trilha QA Academy**!
 
 Nossa missão é transformar iniciantes e testadores manuais em **Engenheiros de Qualidade de Software (QA)** de alto nível, com mentalidade preventiva (Shift-Left Testing) e foco em automação.
 
@@ -12,7 +12,9 @@ Nossa missão é transformar iniciantes e testadores manuais em **Engenheiros de
 ---
 
 ## 📚 Como funciona a Trilha?
+
 O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint, você encontrará:
+
 1. **Teoria e Fundamentos** (Leitura rápida aqui no GitHub).
 2. **Vídeo Aulas** (Direto do nosso canal no YouTube).
 3. **Desafio Prático** (Atividade para colocar a mão na massa e construir o seu portfólio).
@@ -22,15 +24,21 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 ## 🗺️ Índice de Sprints (Roadmap)
 
 ### 🟢 Fase 1: Fundamentos & Mindset
-* [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/) *(Disponível)*
-* [Sprint 02: Teoria de Testes, Técnicas de Design & BDD](./sprints/sprint-02/) *(Disponível)*
+
+- [Sprint 01: Fundamentos de Quality Assurance & Mindset](./sprints/sprint-01/) _(Disponível)_
+- [Sprint 02: Teoria de Testes, Técnicas de Design & BDD](./sprints/sprint-02/) _(Disponível)_
 
 ### 🟣 Fase 2: Engenharia e Automação
-* [Sprint 03: Fundamentos de Testes WEB, DevTools e Prática no SauceDemo](./sprints/sprint-03/) *(Disponível)*
+
+- [Sprint 03: Fundamentos de Testes WEB, DevTools e Prática no SauceDemo](./sprints/sprint-03/) _(Disponível)_
+- [Sprint 04: Testes de API REST, Arquitetura Backend e Postman na Prática](./sprints/sprint-04/) _(Disponível)_
 
 ---
+
 ## 🎯 Como entregar seus desafios práticos?
+
 Ao final de cada Sprint, você terá um projeto prático. Para enviar o seu projeto e receber feedback:
+
 1. Vá na aba **[Issues](https://github.com/alexandreti-aut/trilha-qa-academy/issues)** deste repositório.
 2. Clique no botão verde **New Issue**.
 3. Selecione o template **"🚀 Entrega de Desafio Prático"**.
