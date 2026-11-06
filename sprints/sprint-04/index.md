@@ -270,7 +270,7 @@ Nas requisições que exigem autenticação:
 
 📹 **Assista à aula técnica completa sobre o Módulo 3:**
 <br>
-[![Aula Prática: Requisições, Variáveis e Autenticação JWT](https://img.youtube.com/vi/ID_DO_VIDEO_S04M03/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_S04M03)
+[![Aula Prática: Requisições, Variáveis e Autenticação JWT](https://img.youtube.com/vi/ylnFU54wGVw/maxresdefault.jpg)](https://youtu.be/ylnFU54wGVw)
 
 ---
 
