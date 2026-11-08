@@ -399,7 +399,150 @@ O Postman integra internamente a biblioteca **Faker.js**, permitindo gerar valor
 
 ---
 
-## 📋 Módulo 5: Projeto Prático da Sprint 04 (Cadastro de Usuários com BDD e Postman)
+### 🧪 5. Automação de Testes com JavaScript no Postman
+
+Nesta seção, exploramos a aba **Tests** do Postman para transformar requisições manuais em **suítes de testes automatizados**. Através de scripts em JavaScript e da biblioteca de asserções **Chai.js** nativa do Postman, validamos contratos de API, códigos de status HTTP e mensagens de resposta de forma instantânea e determinística.
+
+---
+
+#### 5.1. Fundamentos da Aba Tests e da PM API
+
+A aba **Tests** é executada automaticamente pelo Postman **logo após** o recebimento da resposta HTTP enviada pelo servidor. Nela, temos acesso ao objeto global `pm` (_Postman Sandbox API_), que fornece métodos para inspecionar a resposta e definir o resultado dos testes.
+
+##### Estrutura Básica de uma Asserção (`pm.test`):
+
+```javascript
+pm.test("Descrição clara do que está sendo testado", function () {
+  // Código de validação utilizando Chai.js
+});
+```
+
+- **`pm.test()`**: Função responsável por registrar um teste no painel de resultados. Recebe dois parâmetros: o título do teste e uma função callback com as verificações.
+- **`pm.response`**: Objeto que contém todas as informações da resposta retornada (Status Code, Body, Headers, Tempo de Resposta).
+- **`pm.expect()`**: Sintaxe da biblioteca Chai.js no formato BDD (_Behavior-Driven Development_) para construir asserções legíveis e expressivas.
+
+---
+
+#### 5.2. Principais Tipos de Validações e Sintaxe Chai.js
+
+##### 1. Validação de Status Code HTTP
+
+Garante que a resposta retornou o código de status esperado para o cenário testado.
+
+```javascript
+// Exemplo: Validar Status Code 200 OK ou 201 Created
+pm.test("Status code é 201 Created", function () {
+  pm.response.to.have.status(201);
+});
+```
+
+##### 2. Conversão e Inspeção do Corpo da Resposta (JSON Body)
+
+Para validar chaves e valores dentro da resposta JSON, primeiro convertemos o corpo da resposta em um objeto JavaScript através de `pm.response.json()`.
+
+```javascript
+var jsonData = pm.response.json();
+```
+
+##### 3. Validação de Conteúdo da Mensagem (`to.eql`)
+
+Verifica se o valor de uma propriedade específica no JSON é idêntico ao valor esperado pela regra de negócio.
+
+```javascript
+pm.test("Mensagem de retorno é 'Cadastro realizado com sucesso'", function () {
+  var jsonData = pm.response.json();
+  pm.expect(jsonData.message).to.eql("Cadastro realizado com sucesso");
+});
+```
+
+##### 4. Validação de Tipos e Campos Não Vazio (`to.be.a` / `is.not.empty`)
+
+Garante a integridade do contrato da API validando o tipo do dado e assegurando que um identificador gerado pelo banco de dados não retornou nulo ou vazio.
+
+```javascript
+pm.test("Retorna um ID de usuário válido", function () {
+  var jsonData = pm.response.json();
+  pm.expect(jsonData._id).to.be.a("string").that.is.not.empty;
+});
+```
+
+---
+
+#### 5.3. Construção Prática de Testes Automatizados
+
+A seguir, apresentamos a implementação completa das suítes de testes automatizados para os cenários positivo (caminho feliz) e negativo (validação de regra de negócio) mapeados no projeto.
+
+##### 1. Requisição: `POST - Criar Usuario Sucesso` (Status 201)
+
+Insira as seguintes asserções na aba **Tests** da requisição de cadastro com massa dinâmica:
+
+```javascript
+// Teste 1: Valida o Status Code HTTP 201 Created
+pm.test("Status code é 201 Created", function () {
+  pm.response.to.have.status(201);
+});
+
+// Teste 2: Valida a mensagem de sucesso retornada no JSON
+pm.test("Mensagem de retorno é 'Cadastro realizado com sucesso'", function () {
+  var jsonData = pm.response.json();
+  pm.expect(jsonData.message).to.eql("Cadastro realizado com sucesso");
+});
+
+// Teste 3: Valida se o ID foi gerado como String e não está vazio
+pm.test("Retorna um ID de usuario valido", function () {
+  var jsonData = pm.response.json();
+  pm.expect(jsonData._id).to.be.a("string").that.is.not.empty;
+});
+```
+
+##### 2. Requisição: `POST - Criar Usuario Email Duplicado` (Status 400)
+
+Insira as seguintes asserções na aba **Tests** da requisição configurada com um e-mail já existente na base de dados:
+
+```javascript
+// Teste 1: Valida o Status Code HTTP 400 Bad Request
+pm.test("Status code é 400 Bad Request", function () {
+  pm.response.to.have.status(400);
+});
+
+// Teste 2: Valida a mensagem de erro de e-mail duplicado
+pm.test("Mensagem de erro é 'Este email já está sendo usado'", function () {
+  var jsonData = pm.response.json();
+  pm.expect(jsonData.message).to.eql("Este email já está sendo usado");
+});
+```
+
+---
+
+#### 5.4. Execução e Leitura da Aba Test Results
+
+Ao clicar em **Send** após salvar os scripts na aba **Tests**:
+
+1. Observe o painel inferior de resposta HTTP.
+2. Clique na aba **Test Results** (localizada ao lado de _Body_ e _Headers_).
+3. Cada asserção será exibida com a tag visual de resultado:
+   - **PASS** (em verde): O teste passou e a API respondeu exatamente de acordo com a asserção.
+   - **FAIL** (em vermelho): O teste falhou, exibindo o detalhamento do erro com a diferença entre o valor esperado (_expected_) e o recebido (_actual_).
+
+---
+
+#### 5.5. Checklist Prático do Módulo
+
+- [ ] Acessar a aba **Tests** da requisição `POST - Criar Usuario Sucesso`.
+- [ ] Implementar a validação de Status Code `201 Created`, mensagem de sucesso e verificação do campo `_id`.
+- [ ] Acessar a aba **Tests** da requisição `POST - Criar Usuario Email Duplicado`.
+- [ ] Implementar a validação de Status Code `400 Bad Request` e mensagem de erro de e-mail cadastrado.
+- [ ] Executar ambas as requisições e validar que todas as asserções retornaram **PASS** no painel **Test Results**.
+
+---
+
+📹 **Assista à aula técnica completa sobre o Módulo 5:**
+<br>
+[![Aula Prática: Automação de Testes com JavaScript no Postman](https://img.youtube.com/vi/sJmGdid-2oQ/maxresdefault.jpg)](https://youtu.be/sJmGdid-2oQ)
+
+---
+
+## 📋 Módulo 6: Projeto Prático da Sprint 04 (Cadastro de Usuários com BDD e Postman)
 
 Neste projeto prático, você aplicará todo o conhecimento adquirido. Você atuará como o QA responsável por mapear, testar e automatizar as validações do endpoint **`POST /usuarios`** da plataforma ServeRest.
 
