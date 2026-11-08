@@ -548,6 +548,12 @@ Neste projeto prático, você aplicará todo o conhecimento adquirido. Você atu
 
 ---
 
+📹 **Assista à apresentação do Projeto Prático da Sprint 04:**
+<br>
+[![Apresentação do Projeto Prático: Testes de API no Postman](https://img.youtube.com/vi/slg-AFJWiho/maxresdefault.jpg)](https://youtu.be/slg-AFJWiho)
+
+---
+
 ### 📄 Especificação do Endpoint: `POST /usuarios`
 
 - **URL:** `{{baseUrl}}/usuarios`
@@ -564,12 +570,72 @@ Neste projeto prático, você aplicará todo o conhecimento adquirido. Você atu
 }
 ```
 
-#### Regras de Negócio e Critérios de Aceite:
+### ⚙️ Regras de Negócio e Critérios de Aceite
 
-1.  **Campos Obrigatórios:** Todos os campos (`nome`, `email`, `password`, `administrador`) são de preenchimento obrigatório.
-2.  **Unicidade de E-mail:** Não é permitido cadastrar dois usuários com o mesmo endereço de e-mail na base de dados.
-3.  **Valor do Administrador:** O campo `administrador` deve aceitar estritamente os valores `"true"` ou `"false"`.
-4.  **Resposta de Sucesso:** Em caso de cadastro bem-sucedido, a API deve retornar o código `201 Created`, a mensagem `"Cadastro realizado com sucesso"` e a chave `"_id"` gerada.
+O endpoint `POST /usuarios` é responsável pelo cadastramento de novos usuários na plataforma. Para garantir a integridade da aplicação e a qualidade do software, todos os testes devem validar rigorosamente o contrato de dados e as mensagens de erro retornadas pelo servidor.
+
+---
+
+#### 1. Tipagem e Formato dos Parâmetros
+
+Todos os campos do payload de requisição devem ser enviados obrigatoriamente no formato **`string`**:
+
+| Campo           | Tipo     | Obrigatoriedade | Descrição                                                             |
+| :-------------- | :------- | :-------------- | :-------------------------------------------------------------------- |
+| `nome`          | `string` | Obrigatório     | Nome completo do usuário. Não pode ser vazio.                         |
+| `email`         | `string` | Obrigatório     | Endereço de e-mail do usuário. Deve ser único na base.                |
+| `password`      | `string` | Obrigatório     | Senha de acesso do usuário. Não pode ser vazia.                       |
+| `administrador` | `string` | Obrigatório     | Define o perfil de acesso. Aceita estritamente `"true"` ou `"false"`. |
+
+---
+
+#### 2. Mapeamento Completo dos Critérios de Aceite & Mensagens de Erro
+
+##### CA-01: Cadastro com Sucesso (Caminho Feliz)
+
+- **Condição:** Quando todos os campos forem preenchidos com valores válidos no formato `string`, o e-mail for inédito e o campo `administrador` for `"true"` ou `"false"`.
+- **Status HTTP:** `201 Created`
+- **Payload de Resposta:**
+  ```json
+  {
+    "message": "Cadastro realizado com sucesso",
+    "_id": "0uxT84nW8D2wWZp1"
+  }
+  ```
+
+##### CA-02: Unicidade de E-mail (Regra de Negócio)
+
+- **Condição:** Quando for enviada uma requisição com um e-mail que já existe na base de dados.
+- **Status HTTP:** `400 Bad Request`
+- **Mensagem de Erro:** `"Este email já está sendo usado"`
+- **Payload de Resposta:**
+  ```json
+  {
+    "message": "Este email já está sendo usado"
+  }
+  ```
+
+##### CA-03: Validação do Campo Administrador
+
+- **Condição:** Quando o campo `administrador` receber um valor diferente das strings `"true"` ou `"false"` (ex: tipo boolean `true`, `"sim"`, `"1"`, `"admin"`).
+- **Status HTTP:** `400 Bad Request`
+- **Mensagem de Erro:** `"administrador deve ser 'true' ou 'false'"`
+- **Payload de Resposta:**
+  ```json
+  {
+    "administrador": "administrador deve ser 'true' ou 'false'"
+  }
+  ```
+
+##### CA-04: Campos Obrigatórios Ausentes ou Vazios
+
+- **Condição:** Quando um ou mais campos não forem enviados no payload ou forem enviados como string vazia (`""`).
+- **Status HTTP:** `400 Bad Request`
+- **Mensagens de Erro por Campo:**
+  - Campo `nome` ausente/vazio: `"nome não pode ficar em branco"`
+  - Campo `email` ausente/vazio: `"email não pode ficar em branco"`
+  - Campo `password` ausente/vazio: `"password não pode ficar em branco"`
+  - Campo `administrador` ausente/vazio: `"administrador não pode ficar em branco"`
 
 ---
 
@@ -579,79 +645,129 @@ Abra o seu **VS Code**, crie a pasta do projeto `projeto-api-serverest/features/
 
 Escreva a especificação BDD utilizando **palavras-chave em inglês** (_Given, When, Then, And_) para cobrir cenários positivos e negativos:
 
-```gherkin
-Feature: Registration of Users (POST /usuarios)
-  As an API client
-  I want to register new users in the ServeRest platform
-  So that they can access the system according to their permissions
-
-  Scenario: Success - Register a new user with valid data (201 Created)
-    Given that I have a valid user payload with a unique email
-    When I send a POST request to "{{baseUrl}}/usuarios"
-    Then the response status code should be 201
-    And the response body should contain the message "Cadastro realizado com sucesso"
-    And the response body should contain a valid "_id"
-
-  Scenario: Error - Try to register a user with an already existing email (400 Bad Request)
-    Given that I have a user payload with an email that is already registered in the database
-    When I send a POST request to "{{baseUrl}}/usuarios"
-    Then the response status code should be 400
-    And the response body should contain the message "Este email já está sendo usado"
-
-  Scenario: Error - Try to register a user without the required field "email" (400 Bad Request)
-    Given that I have a user payload missing the "email" field
-    When I send a POST request to "{{baseUrl}}/usuarios"
-    Then the response status code should be 400
-    And the response body should contain the message "email é obrigatório"
-
-  Scenario: Error - Try to register a user without the required field "password" (400 Bad Request)
-    Given that I have a user payload missing the "password" field
-    When I send a POST request to "{{baseUrl}}/usuarios"
-    Then the response status code should be 400
-    And the response body should contain the message "password é obrigatório"
-```
-
 ---
 
 ### 🧪 Passo 2: Construção e Automação de Testes no Postman
 
-No Postman, crie as requisições correspondentes a cada cenário BDD mapeado. Na aba **Tests** de cada requisição, insira as asserções automatizadas em JavaScript:
+Após o mapeamento completo da funcionalidade em BDD, a etapa seguinte engloba a **execução e automação prática** no Postman.
 
-#### 1. Para a Requisição: `POST - Criar Usuario Sucesso` (Status 201)
+Enquanto a especificação em BDD documenta a totalidade dos cenários da regra de negócio, a automação prática prioriza a validação dos pilares essenciais do contrato da API. Selecionamos requisições estratégicas que cobrem o **Caminho Feliz (201 Created)**, as **Regras Globais de Negócio (400 Bad Request)** e as **Validações de Campos Específicos (400 Bad Request)**, assegurando uma suíte de testes eficiente, legível e de alta manutenibilidade.
+
+---
+
+#### 1. Requisição: `POST - Criar Usuario Sucesso` (Status 201)
+
+No painel da requisição, configure um payload dinâmico na aba **Body** (`raw` > `JSON`) com as variáveis `{{$randomFullName}}`, `{{$randomEmail}}` e `{{$randomPassword}}` para garantir testes independentes e idempotentes:
+
+```json
+{
+  "nome": "{{$randomFullName}}",
+  "email": "{{$randomEmail}}",
+  "password": "{{$randomPassword}}",
+  "administrador": "true"
+}
+```
+
+Na aba **Tests**, insira o script de automação em JavaScript:
 
 ```javascript
-// Teste 1: Valida o Status Code 201
+// Teste 1: Valida o código de status HTTP 201 Created
 pm.test("Status code é 201 Created", function () {
   pm.response.to.have.status(201);
 });
 
-// Teste 2: Valida a mensagem de sucesso no JSON
+// Teste 2: Valida a mensagem de sucesso retornada no corpo JSON
 pm.test("Mensagem de retorno é 'Cadastro realizado com sucesso'", function () {
   var jsonData = pm.response.json();
   pm.expect(jsonData.message).to.eql("Cadastro realizado com sucesso");
 });
 
-// Teste 3: Valida se o ID foi gerado
-pm.test("Retorna um ID de usuario valido", function () {
+// Teste 3: Valida a integridade do contrato (chave _id gerada e preenchida)
+pm.test("Retorna um _id de usuário válido", function () {
   var jsonData = pm.response.json();
   pm.expect(jsonData._id).to.be.a("string").that.is.not.empty;
 });
 ```
 
-#### 2. Para a Requisição: `POST - Criar Usuario Email Duplicado` (Status 400)
+---
+
+#### 2. Requisição: `POST - Criar Usuario Email Duplicado` (Status 400)
+
+Na aba **Body** (`raw` > `JSON`), utilize um e-mail estático previamente cadastrado no banco de dados (ex: `fulano@qa.com`):
+
+```json
+{
+  "nome": "Fulano de Tal",
+  "email": "fulano@qa.com",
+  "password": "teste123password",
+  "administrador": "false"
+}
+```
+
+Na aba **Tests**, insira o script de automação em JavaScript:
 
 ```javascript
-// Teste 1: Valida o Status Code 400
+// Teste 1: Valida o código de status HTTP 400 Bad Request
 pm.test("Status code é 400 Bad Request", function () {
   pm.response.to.have.status(400);
 });
 
-// Teste 2: Valida a mensagem de erro de e-mail duplicado
+// Teste 2: Valida a mensagem global de erro de e-mail cadastrado
 pm.test("Mensagem de erro é 'Este email já está sendo usado'", function () {
   var jsonData = pm.response.json();
   pm.expect(jsonData.message).to.eql("Este email já está sendo usado");
 });
 ```
+
+---
+
+#### 3. Requisição: `POST - Criar Usuario Administrador Inválido` (Status 400)
+
+Na aba **Body** (`raw` > `JSON`), informe um valor fora do domínio aceito pelo campo `administrador` (ex: `"invalido"`):
+
+```json
+{
+  "nome": "{{$randomFullName}}",
+  "email": "{{$randomEmail}}",
+  "password": "{{$randomPassword}}",
+  "administrador": "invalido"
+}
+```
+
+Na aba **Tests**, insira o script de automação em JavaScript:
+
+```javascript
+// Teste 1: Valida o código de status HTTP 400 Bad Request
+pm.test("Status code é 400 Bad Request", function () {
+  pm.response.to.have.status(400);
+});
+
+// Teste 2: Valida a mensagem de erro específica mapeada na chave do campo
+pm.test(
+  "Mensagem de erro é 'administrador deve ser 'true' ou 'false''",
+  function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.administrador).to.eql(
+      "administrador deve ser 'true' ou 'false'",
+    );
+  },
+);
+```
+
+---
+
+> 📌 **Estratégia de Cobertura de Automação:**  
+> A estrutura acima consolida os principais padrões de asserção em JavaScript e Chai.js (`pm.test`, `pm.response` e `pm.expect`), cobrindo validações de códigos HTTP, tipo de dado do contrato e inspeção de mensagens de erro no formato objeto chave/valor de forma direta e sem redundâncias.
+
+---
+
+### ✅ Checklist de Entrega do Projeto Prático
+
+- [ ] Criar a pasta **04 - Projeto Pratico - Usuarios** dentro da Collection do Postman.
+- [ ] Configurar a requisição `POST - Criar Usuario Sucesso` com dados dinâmicos e 3 asserções verdes (**PASS**).
+- [ ] Configurar a requisição `POST - Criar Usuario Email Duplicado` com e-mail estático e 2 asserções verdes (**PASS**).
+- [ ] Configurar a requisição `POST - Criar Usuario Administrador Invalido` com valor fora do domínio e 2 asserções verdes (**PASS**).
+- [ ] Salvar todas as requisições e validar a execução completa das asserções no painel **Test Results**.
 
 ---
 
@@ -698,11 +814,5 @@ projeto-api-serverest/
 2. Acesse o repositório oficial da Trilha QA Academy e abra uma nova **Issue** informando a sua entrega da Sprint 04:
    👉 **[Entregar Projeto da Sprint 04 no GitHub (Abrir Issue)](https://github.com/AlexandreTI-AUT/trilha-qa-academy/issues)**
 3. Preencha o template informando a conclusão da Sprint 04 e inclua o link direto do seu projeto para receber feedback e code review da comunidade!
-
----
-
-📹 **Assista à apresentação do Projeto Prático da Sprint 04:**
-<br>
-[![Apresentação do Projeto Prático: Testes de API no Postman](https://img.youtube.com/vi/ID_DO_VIDEO_S04M04/maxresdefault.jpg)](https://youtu.be/ID_DO_VIDEO_S04M04)
 
 ---
