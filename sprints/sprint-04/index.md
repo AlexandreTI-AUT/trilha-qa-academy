@@ -282,7 +282,124 @@ Nas requisições que exigem autenticação:
 
 ---
 
-## 📋 Módulo 4: Projeto Prático da Sprint 04 (Cadastro de Usuários com BDD e Postman)
+### 🌐 4. Manipulação de cURL e Variáveis Dinâmicas no Postman
+
+Nesta seção, abordamos duas funcionalidades indispensáveis para a produtividade de um Engenheiro de Qualidade: o intercâmbio de requisições via comandos **cURL** entre equipes e a geração de massa de dados dinâmicos com **Dynamic Variables** para garantir a independência de testes de regressão.
+
+---
+
+#### 4.1. Trabalhando com Comandos cURL
+
+O **cURL** (_Client URL_) é uma ferramenta de linha de comando para transferência de dados suportada por praticamente todos os sistemas operacionais e linguagens de programação. No dia a dia de projetos de software, desenvolvedores e profissionais de QA utilizam a sintaxe cURL como padrão universal para compartilhar chamadas de API via Slack, Jira ou documentações.
+
+##### 📥 Importando um Comando cURL para o Postman
+
+Para converter um comando cURL recebido em uma requisição estruturada no Postman:
+
+1. Copie o comando cURL completo.
+2. No menu superior esquerdo do Postman, clique no botão **Import**.
+3. Cole a linha de comando no campo de texto central.
+4. O Postman interpretará automaticamente a URL, o método HTTP, os cabeçalhos (_Headers_) e o corpo da requisição (_Body_).
+5. Clique em **Import** e salve a requisição dentro da sua **Collection**.
+
+###### Exemplo de cURL para Importação (`POST /usuarios`):
+
+```bash
+curl -X POST [https://serverest.dev/usuarios](https://serverest.dev/usuarios) \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "nome": "Fulano de Tal",
+    "email": "fulano.teste@qa.com",
+    "password": "teste123password",
+    "administrador": "true"
+  }'
+```
+
+##### 📤 Exportando uma Requisição do Postman para cURL
+
+Para compartilhar uma requisição configurada no Postman com um desenvolvedor (ex: para reprodução de um bug):
+
+1. Abra a requisição desejada na sua coleção.
+2. No painel lateral direito, clique no ícone **Code Snippet** (`</>`).
+3. No dropdown de linguagens de programação, selecione **cURL**.
+4. Clique no botão **Copy to clipboard**.
+5. Cole o comando na documentação do bug ou no canal do time.
+
+> 💡 **Dica de Ouro:** O cURL gerado pelo Postman inclui todos os cabeçalhos ativados e o payload exato configurado, permitindo que qualquer pessoa execute a mesma chamada direto pelo terminal do computador.
+
+---
+
+#### 4.2. Variáveis Dinâmicas (_Dynamic Variables_)
+
+##### O Problema da Massa de Dados Estática
+
+Ao executar requisições de cadastro (como `POST /usuarios`) utilizando dados fixos (_hardcoded_), a primeira execução retorna `Status 201 Created`. No entanto, a partir da segunda execução, a API rejeita a requisição retornando **`Status 400 Bad Request`** com a mensagem de erro:
+
+```json
+{
+  "message": "Este email já está sendo usado"
+}
+```
+
+Para garantir que as suítes de teste automatizadas sejam executadas de forma **independente, idempotente e sem falhas por duplicidade**, utilizamos as **Dynamic Variables** nativas do Postman.
+
+##### Como Funcionam as Dynamic Variables (`{{$random...}}`)
+
+O Postman integra internamente a biblioteca **Faker.js**, permitindo gerar valores aleatórios e válidos em tempo de execução através da sintaxe de chaves duplas iniciada por cifrão: **`{{$randomNameVariable}}`**.
+
+###### Principais Variáveis Dinâmicas para Testes de API:
+
+| Variável Dinâmica          | Descrição                                           | Exemplo de Retorno em Tempo de Execução  |
+| :------------------------- | :-------------------------------------------------- | :--------------------------------------- |
+| `{{$randomFullName}}`      | Gera um nome e sobrenome aleatórios                 | `"Ana Carolina Silva"`                   |
+| `{{$randomEmail}}`         | Gera um e-mail com domínio aleatório e único        | `"claudia_macedo@yahoo.com"`             |
+| `{{$randomPassword}}`      | Gera uma senha forte aleatória                      | `"a9B_k2L8qM"`                           |
+| `{{$randomUUID}}`          | Gera um identificador único universal (UUID v4)     | `"f47ac10b-58cc-4372-a567-0e02b2c3d479"` |
+| `{{$randomPhoneNumber}}`   | Gera um número de telefone no formato internacional | `"+55 11 98823-4412"`                    |
+| `{{$randomStreetAddress}}` | Gera um endereço residencial fictício               | `"Avenida Paulista, 1500"`               |
+
+##### Comparativo Prático: Payload Estático vs. Payload Dinâmico
+
+###### ❌ Abordagem Estática (Falha no 2º disparo):
+
+```json
+{
+  "nome": "Fulano da Silva",
+  "email": "fulano.silva@qa.com",
+  "password": "teste123password",
+  "administrador": "true"
+}
+```
+
+###### ✅ Abordagem Dinâmica (Execução ilimitada com sucesso):
+
+```json
+{
+  "nome": "{{$randomFullName}}",
+  "email": "{{$randomEmail}}",
+  "password": "{{$randomPassword}}",
+  "administrador": "true"
+}
+```
+
+---
+
+#### 4.3. Checklist Prático do Módulo
+
+- [ ] Importar um comando cURL para o Postman usando o botão **Import**.
+- [ ] Exportar uma requisição existente para o formato cURL utilizando a aba **Code Snippet (`</>`)**.
+- [ ] Atualizar o corpo (_Body_) da requisição `POST /usuarios` substituindo os dados estáticos pelas variáveis `{{$randomFullName}}`, `{{$randomEmail}}` e `{{$randomPassword}}`.
+- [ ] Disparar a requisição `POST /usuarios` 3 vezes consecutivas e validar que todas retornaram **`Status 201 Created`**.
+
+---
+
+📹 **Assista à aula técnica completa sobre o Módulo 4:**
+<br>
+[![Aula Prática: Comandos cURL e Variáveis Dinâmicas no Postman](https://img.youtube.com/vi/xkUi2KFu41c/maxresdefault.jpg)](https://youtu.be/xkUi2KFu41c)
+
+---
+
+## 📋 Módulo 5: Projeto Prático da Sprint 04 (Cadastro de Usuários com BDD e Postman)
 
 Neste projeto prático, você aplicará todo o conhecimento adquirido. Você atuará como o QA responsável por mapear, testar e automatizar as validações do endpoint **`POST /usuarios`** da plataforma ServeRest.
 
