@@ -268,9 +268,17 @@ Nas requisições que exigem autenticação:
 
 ---
 
-📹 **Assista à aula técnica completa sobre o Módulo 3:**
+📹 **Assista às aulas técnicas completas sobre o Módulo 3:**
+
+**Parte 1: Requisições, Variáveis de Ambiente e CRUD Completo**
 <br>
-[![Aula Prática: Requisições, Variáveis e Autenticação JWT](https://img.youtube.com/vi/ylnFU54wGVw/maxresdefault.jpg)](https://youtu.be/ylnFU54wGVw)
+[![Aula Prática: Requisições, Variáveis e CRUD Completo](https://img.youtube.com/vi/ylnFU54wGVw/maxresdefault.jpg)](https://youtu.be/ylnFU54wGVw)
+
+<br>
+
+**Parte 2: Autenticação e Extração Dinâmica de Token JWT**
+<br>
+[![Aula Prática: Autenticação e Extração Dinâmica de Token JWT](https://img.youtube.com/vi/aKIvPsHOhsY/maxresdefault.jpg)](https://youtu.be/aKIvPsHOhsY)
 
 ---
 
