@@ -41,17 +41,13 @@ Para que você não precise instalar um banco de dados pesado (como PostgreSQL o
 
 ##### 📂 Arquivos Disponíveis no Repositório
 
-🔗 **[Clique aqui para acessar a pasta principal da Sprint 05 no GitHub](https://github.com/)** _(atualize com a URL do repositório)_
-
 Você pode acessar e baixar diretamente os arquivos da **Sprint 05** nos links abaixo:
 
 - **sprints/sprint-05/**
   - **database/**
-    - 📄 [`init-database.sql`](https://github.com/) _(Script DDL/DML para carga inicial das tabelas)_
-    - 🛢️ `database.db` _(Arquivo de banco de dados gerado localmente no terminal)_
+    - 📄 [`init-database.sql`](https://github.com/AlexandreTI-AUT/trilha-qa-academy/blob/main/sprints/sprint-05/database/init-database.sql) _(Script DDL/DML para carga inicial das tabelas)_
   - **scripts/**
-    - 📄 [`queries.sql`](https://github.com/) _(Arquivo para você praticar as consultas SQL)_
-  - 📑 [`index.md`](https://github.com/) _(Documentação e guia da sprint)_
+    - 📄 [`queries.sql`](https://github.com/AlexandreTI-AUT/trilha-qa-academy/blob/main/sprints/sprint-05/scripts/queries.sql) _(Arquivo para você praticar as consultas SQL)_
 
 ##### 🚀 Comando para gerar o banco no Terminal do VS Code (macOS/Linux):
 
