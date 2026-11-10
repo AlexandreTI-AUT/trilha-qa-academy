@@ -32,6 +32,7 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 
 - [Sprint 03: Fundamentos de Testes WEB, DevTools e Prática no SauceDemo](./sprints/sprint-03/) _(Disponível)_
 - [Sprint 04: Testes de API REST, Arquitetura Backend e Postman na Prática](./sprints/sprint-04/) _(Disponível)_
+- [Sprint 05: SQL e Banco de Dados para QA: Guia Prático de Validação](./sprints/sprint-05/) _(Disponível)_
 
 ---
 
