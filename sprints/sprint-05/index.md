@@ -22,14 +22,39 @@
 
 #### 1. Teoria: Por que o QA precisa consultar o Banco de Dados?
 
-Quando realizamos um teste via Interface (UI) ou API (Postman), a resposta do front-end ou o Status Code 201 Created indica que a aplicação processou a requisição. No entanto, para garantir que os dados não foram corrompidos ou perdidos, o QA consulta diretamente o banco de dados.
+Quando realizamos um teste via Interface (UI) ou API (Postman), a resposta do front-end ou o Status Code `201 Created` indica apenas que a aplicação processou a requisição. No entanto, para garantir que os dados não foram corrompidos, truncados ou perdidos, o analista de QA consulta diretamente a **camada de persistência (Banco de Dados)**.
 
-**Fluxo de Validação de Persistência:**
+##### 🔄 Fluxo de Validação de Persistência
 
-1. **Ação:** [ QA / Postman / UI ] ──(Dispara Ação)──► [ API / Backend ]
-2. **Gravação:** [ API / Backend ] ──(Grava Registro)──► [ Banco de Dados ]
-3. **Consulta:** [ QA / Postman / UI ] ──(Executa Query SQL)──► [ Banco de Dados ]
-4. **Asserção:** [ Banco de Dados ] ──(Retorna Dados)──► [ QA / Validação de Contrato ]
+1. **Ação:** [ QA / Postman / UI ] ──(Dispara Requisição)──► [ API / Backend ]
+2. **Gravação:** [ API / Backend ] ──(Persiste os Dados)──► [ Banco de Dados ]
+3. **Consulta:** [ QA / Postman / UI ] ──(Executa Query Directa)──► [ Banco de Dados ]
+4. **Validação:** [ Banco de Dados ] ──(Retorna Registro)──► [ QA / Validação de Contrato ]
+
+---
+
+#### 💡 Tipos de Bancos de Dados: Relacional (SQL) vs Não Relacional (NoSQL)
+
+No mercado de tecnologia, o QA encontrará dois grandes paradigmas de banco de dados. Compreender essa diferença é fundamental para definir a estratégia de teste e o tipo de consulta necessária:
+
+| Característica          | Bancos Relacionais (SQL / SGBD)                                       | Bancos Não Relacionais (NoSQL)                                     |
+| :---------------------- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| **Estrutura**           | Tabelas com linhas (registros) e colunas (atributos) bem definidas.   | Documentos (JSON/BSON), chave-valor, grafos ou colunas flexíveis.  |
+| **Esquema (Schema)**    | **Rígido:** Exige estrutura fixa pré-definida antes de inserir dados. | **Flexível:** Permite campos dinâmicos por documento.              |
+| **Relacionamentos**     | Usa Chaves Primárias/Estrangeiras (`FK`) e junções (`JOIN`).          | Dados aninhados/embutidos ou referências diretas sem JOIN rígido.  |
+| **Linguagem**           | **SQL** (_Structured Query Language_).                                | APIs e linguagens próprias (ex: MQL no MongoDB).                   |
+| **Principais Exemplos** | **Oracle Database**, PostgreSQL, MySQL, SQL Server, **SQLite**.       | **MongoDB**, Redis, Cassandra, DynamoDB, CouchDB.                  |
+| **Uso no QA**           | Validar tabelas de usuários, pedidos, transações financeiras.         | Validar logs, catálogos de produtos flexíveis, sessões de usuário. |
+
+---
+
+#### 🛠️ Exemplos no Mercado: Quando usar cada um?
+
+| Tecnologia                       | Tipo                   | Aplicação Típica em Projetos                                                              | O que o QA valida?                                                                                 |
+| :------------------------------- | :--------------------- | :---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
+| **Oracle Database / PostgreSQL** | Relacional (SQL)       | Sistemas corporativos, bancários e e-commerce tradicionais.                               | Integridade referencial, chaves estrangeiras, consistência de dados e regras de negócio complexas. |
+| **SQLite**                       | Relacional (SQL)       | Aplicações mobile (iOS/Android), testes locais e aplicações embarcadas.                   | Persistência local rápida em ambiente de desenvolvimento/automação sem infraestrutura pesada.      |
+| **MongoDB**                      | Não Relacional (NoSQL) | Microserviços modernos, aplicações de alta escala e sistemas com payloads JSON variáveis. | Estrutura dos documentos JSON, presença de campos opcionais e performance em consultas pesadas.    |
 
 ---
 
