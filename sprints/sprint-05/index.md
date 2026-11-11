@@ -39,17 +39,29 @@ Para que você não precise instalar um banco de dados pesado (como PostgreSQL o
 
 🎥 **Vídeo Explicativo:** Assista à vídeo-aula deste módulo para acompanhar o passo a passo de configuração do ambiente e a execução no terminal do VS Code.
 
-##### 📂 Arquivos Disponíveis no Repositório
+##### 📂 Estrutura e Conteúdo dos Arquivos
 
-Você pode acessar e baixar diretamente os arquivos da **Sprint 05** nos links abaixo:
+Crie a estrutura de pastas na sua máquina e copie o código correspondente para cada arquivo indicado abaixo:
 
 - **sprints/sprint-05/**
   - **database/**
-    - 📄 [`init-database.sql`](https://github.com/AlexandreTI-AUT/trilha-qa-academy/blob/main/sprints/sprint-05/database/init-database.sql) _(Script DDL/DML para carga inicial das tabelas)_
+    - `init-database.sql`
   - **scripts/**
-    - 📄 [`queries.sql`](https://github.com/AlexandreTI-AUT/trilha-qa-academy/blob/main/sprints/sprint-05/scripts/queries.sql) _(Arquivo para você praticar as consultas SQL)_
+    - `queries.sql`
 
-##### 🚀 Comando para gerar o banco no Terminal do VS Code (macOS/Linux):
+| 📄 Conteúdo do arquivo: `sprints/sprint-05/database/init-database.sql`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-- 1. Limpeza preventiva` <br> **DROP TABLE IF EXISTS** perfis; <br> **DROP TABLE IF EXISTS** usuarios; <br><br> `-- 2. Tabela de Perfis (para exemplos de INNER JOIN)` <br> **CREATE TABLE** perfis ( <br> &nbsp;&nbsp;&nbsp;&nbsp;id **INTEGER PRIMARY KEY AUTOINCREMENT**, <br> &nbsp;&nbsp;&nbsp;&nbsp;nome_perfil **TEXT NOT NULL** <br> ); <br><br> `-- 3. Tabela de Usuários` <br> **CREATE TABLE** usuarios ( <br> &nbsp;&nbsp;&nbsp;&nbsp;id **TEXT PRIMARY KEY NOT NULL**, <br> &nbsp;&nbsp;&nbsp;&nbsp;nome **TEXT NOT NULL**, <br> &nbsp;&nbsp;&nbsp;&nbsp;email **TEXT NOT NULL UNIQUE**, <br> &nbsp;&nbsp;&nbsp;&nbsp;password **TEXT NOT NULL**, <br> &nbsp;&nbsp;&nbsp;&nbsp;administrador **TEXT NOT NULL CHECK** (administrador **IN** ('true', 'false')), <br> &nbsp;&nbsp;&nbsp;&nbsp;perfil_id **INTEGER**, <br> &nbsp;&nbsp;&nbsp;&nbsp;criado_em **DATETIME DEFAULT CURRENT_TIMESTAMP**, <br> &nbsp;&nbsp;&nbsp;&nbsp;**FOREIGN KEY** (perfil_id) **REFERENCES** perfis(id) <br> ); <br><br> `-- 4. Carga Inicial de Dados` <br> **INSERT INTO** perfis (id, nome_perfil) **VALUES** (1, 'Administrador'), (2, 'Cliente'); <br><br> **INSERT INTO** usuarios (id, nome, email, password, administrador, perfil_id) <br> **VALUES** <br> &nbsp;&nbsp;&nbsp;&nbsp;('0uxT84nW8D2wWZp1', 'Fulano da Silva', 'fulano@qa.com', 'teste123', 'true', 1), <br> &nbsp;&nbsp;&nbsp;&nbsp;('9b1deb4d-3b7d-41', 'Ciclano de Souza', 'ciclano@qa.com', 'senha456', 'false', 2); |
+
+<br>
+
+| 📄 Conteúdo inicial do arquivo: `sprints/sprint-05/scripts/queries.sql`                                                                                                                                                                                                           |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-- ============================================================` <br> `-- TRILHA QA ACADEMY - SPRINT 05: CONSULTAS SQL DE TESTE` <br> `-- Arquivo reservado para execução e treino de queries no VS Code` <br> `-- ============================================================` |
+
+---
+
+##### 🚀 Comando para Gerar o Banco no Terminal do VS Code (macOS/Linux):
 
 | Comando para Executar no Terminal                                               |
 | :------------------------------------------------------------------------------ |
