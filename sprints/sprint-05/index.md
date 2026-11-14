@@ -62,9 +62,9 @@ No mercado de tecnologia, o QA encontrará dois grandes paradigmas de banco de d
 
 Para que você não precise instalar um banco de dados pesado (como PostgreSQL ou MySQL), utilizaremos o **SQLite**. Ele funciona em um único arquivo local (`database.db`) de forma extremamente leve e nativa no macOS/Linux.
 
-🎥 **Vídeo Explicativo:** Assista à vídeo-aula deste módulo para acompanhar o passo a passo de configuração do ambiente e a execução no terminal do VS Code.
-
-##### 📂 Estrutura e Conteúdo dos Arquivos
+🎥 **Vídeo Explicativo:**
+<br>
+[![Configuração do Ambiente Local com SQLite](https://img.youtube.com/vi/fgji8Mmj5Tk/maxresdefault.jpg)](https://youtu.be/fgji8Mmj5Tk)
 
 Crie a estrutura de pastas na sua máquina e copie o código correspondente para cada arquivo indicado abaixo:
 
