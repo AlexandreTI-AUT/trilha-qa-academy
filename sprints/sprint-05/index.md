@@ -122,9 +122,9 @@ O comando SELECT é a principal ferramenta do QA. Ele permite filtrar registros 
 
 <br>
 
-🎥 **Vídeo Explicativo:** Assista à vídeo-aula deste módulo para acompanhar a explicação detalhada de cada comando SELECT e a execução em tempo real no VS Code.
-
----
+🎥 **Vídeo Explicativo:**
+<br>
+[![Leitura e Validação de Dados com SELECT no SQLite](https://img.youtube.com/vi/AACtZKthHQ0/maxresdefault.jpg)](https://youtu.be/AACtZKthHQ0)
 
 #### 📝 Atividade Prática 01 (Módulo 2)
 
