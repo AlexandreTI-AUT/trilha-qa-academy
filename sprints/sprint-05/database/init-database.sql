@@ -1,28 +1,47 @@
--- ============================================================
--- TRILHA QA ACADEMY - SPRINT 05: BANCO DE DADOS E SQL PARA QA
--- Script de Inicialização da Base Local (init-database.sql)
--- ============================================================
--- 1. Limpeza preventiva (Idempotência)
+-- ============================================================================
+-- TRILHA QA ACADEMY - SPRINT 05: SQL E BANCO DE DADOS PARA QA
+-- Script de inicialização do banco local (SQLite)
+-- ============================================================================
+-- 1. Limpeza preventiva
 DROP TABLE IF EXISTS usuarios;
 
--- 2. Criação da tabela de usuários
+DROP TABLE IF EXISTS perfis;
+
+-- 2. Criação da tabela auxiliar de perfis
+CREATE TABLE perfis (
+    id          INT  PRIMARY KEY,
+    nome_perfil TEXT NOT NULL UNIQUE
+);
+
+-- 3. Carga inicial dos perfis base
+INSERT  INTO perfis (
+    id,
+    nome_perfil
+)
+VALUES              (1, 'Administrador'),
+                    (2, 'Cliente');
+
+-- 4. Criação da tabela principal de usuários
 CREATE TABLE usuarios (
-    id            TEXT     PRIMARY KEY NOT NULL,
+    id            TEXT     PRIMARY KEY,
     nome          TEXT     NOT NULL,
     email         TEXT     NOT NULL UNIQUE,
     password      TEXT     NOT NULL,
     administrador TEXT     NOT NULL CHECK (administrador IN ('true', 'false')),
-    criado_em     DATETIME DEFAULT CURRENT_TIMESTAMP
+    perfil_id     INT     ,
+    criado_em     DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (perfil_id) REFERENCES perfis (id)
 );
 
--- 3. Carga Inicial de Dados (Massa Pró-existente para Testes)
+-- 5. Carga inicial de massa de dados para testes
 INSERT  INTO usuarios (
     id,
     nome,
     email,
     password,
-    administrador
+    administrador,
+    perfil_id
 )
-VALUES                ('0uxT84nW8D2wWZp1', 'Fulano da Silva', 'fulano@qa.com', 'teste123', 'true'),
-                      ('9b1deb4d-3b7d-41', 'Ciclano de Souza', 'ciclano@qa.com', 'senha456', 'false'),
-                      ('a7b2c3d4-e5f6-78', 'Beltrano dos Santos', 'beltrano@qa.com', 'admin789', 'true');
+VALUES                ('0uxT84nW8D2wWZp1', 'Fulano da Silva', 'fulano@qa.com', 'teste123', 'true', 1),
+                      ('1ayU95oX9E3xXAq2', 'Ciclano de Souza', 'ciclano@qa.com', 'teste456', 'false', 2),
+                      ('2bzV06pY0F4yYBr3', 'Beltrano Oliveira', 'beltrano@qa.com', 'teste789', 'false', 2);
