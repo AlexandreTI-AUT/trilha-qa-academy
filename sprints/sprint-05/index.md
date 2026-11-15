@@ -134,29 +134,31 @@ O comando SELECT é a principal ferramenta do QA. Ele permite filtrar registros 
 
 ---
 
-### 📖 Módulo 3: Manipulação de Dados para Testes (INSERT e UPDATE)
+#### 📖 Módulo 3: Manipulação de Dados para Testes (INSERT e UPDATE)
 
-#### 1. Teoria
+##### 1. Teoria
 
-Além de ler, o QA frequentemente precisa preparar massa de dados prévia via INSERT ou simular alteração de estado no banco via UPDATE (por exemplo, alterar um usuário para 'bloqueado' ou 'administrador' antes de testar a tela).
+Além de ler, o QA frequentemente precisa preparar massa de dados prévia via `INSERT` ou simular alteração de estado no banco via `UPDATE` (por exemplo, alterar um usuário para `'administrador'` antes de testar a tela).
 
 ---
 
-#### 2. Exemplos Práticos
+##### 2. Exemplos Práticos
 
-| Exemplo 3.1: Inserir massa de teste direto no banco (INSERT)                                                                                                                                                                                           |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-- Criar um usuário manualmente para ser usado em um teste de Login` <br> **INSERT INTO** usuarios (id, nome, email, password, administrador, perfil_id) <br> **VALUES** ('usr-teste-003', 'Beltrano QA', 'beltrano@qa.com', 'senha789', 'false', 2); |
-
-<br>
-
-| Exemplo 3.2: Atualizar permissão de usuário (UPDATE)                                                                                                                             |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-- Alterar o perfil do usuário para administrador (true)` <br> **UPDATE** usuarios <br> **SET** administrador = 'true', perfil_id = 1 <br> **WHERE** email = 'beltrano@qa.com'; |
+| Exemplo 3.1: Inserir massa de teste direto no banco (`INSERT`)                                                                                                                                                                 |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-- Criar um usuário manualmente para ser usado em um teste de Login`<br>`INSERT INTO usuarios (id, nome, email, password, administrador)`<br>`VALUES ('usr-teste-004', 'Zezinho QA', 'zezinho@qa.com', 'senha789', 'false');` |
 
 <br>
 
-🎥 **Vídeo Explicativo:** Assista à vídeo-aula deste módulo para ver na prática a manipulação e criação de massa de testes via comandos SQL.
+| Exemplo 3.2: Atualizar permissão de usuário (`UPDATE`)                                                                                               |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-- Alterar o perfil do usuário para administrador (true)`<br>`UPDATE usuarios`<br>`SET administrador = 'true'`<br>`WHERE email = 'zezinho@qa.com';` |
+
+<br>
+
+🎥 **Vídeo Explicativo:**
+<br>
+[![Manipulação de Dados para Testes com INSERT e UPDATE no SQLite](https://img.youtube.com/vi/f7deHUx1qQM/maxresdefault.jpg)](https://youtu.be/f7deHUx1qQM)
 
 ---
 
