@@ -62,8 +62,7 @@ Antes de iniciar qualquer comando, baixe o guia do seu sistema operacional e o g
 
 📹 **Assista à aula teórica e configuração do Módulo 1:**
 <br>
-
-> _(Espaço reservado para o link e thumbnail da vídeo-aula do Módulo 1)_
+[![Fundamentos de Versionamento, Git vs. GitHub, Instalação e Credenciais](https://img.youtube.com/vi/YuHHSeDVwr8/maxresdefault.jpg)](https://youtu.be/YuHHSeDVwr8)
 
 ---
 
