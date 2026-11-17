@@ -113,8 +113,7 @@ Antes de iniciar qualquer comando, baixe o guia do seu sistema operacional e o g
 
 📹 **Assista à aula prática sobre o Módulo 2:**
 <br>
-
-> _(Espaço reservado para o link e thumbnail da vídeo-aula do Módulo 2)_
+[![Criando o Repositório (README.md e .gitignore) e Clonando (git clone)](https://img.youtube.com/vi/CtWjzl3Xt50/maxresdefault.jpg)](https://youtu.be/CtWjzl3Xt50)
 
 ---
 
