@@ -170,8 +170,7 @@ Para trabalhar com segurança no dia a dia, o Git organiza suas alterações em 
 
 📹 **Assista à aula prática sobre o Módulo 3:**
 <br>
-
-> _(Espaço reservado para o link e thumbnail da vídeo-aula do Módulo 3)_
+[![Ciclo Diário de Trabalho — status, add, commit, push e pull](https://img.youtube.com/vi/5Jx_Gx4V2wo/maxresdefault.jpg)](https://youtu.be/5Jx_Gx4V2wo)
 
 ---
 
