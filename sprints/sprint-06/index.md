@@ -247,3 +247,20 @@ Consolidar todo o aprendizado da Sprint 06 criando do zero um repositório públ
 | Exemplo 5.1: Template pronto para o `README.md` do Projeto Prático                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `# 🧪 Portfólio de Quality Assurance (QA)`<br><br>`Repositório dedicado à documentação de planos de testes, cenários escritos em BDD (Gherkin) e boas práticas de engenharia de qualidade.`<br><br>`## 🛠️ Tecnologias e Ferramentas`<br>`* **Controle de Versão:** Git & GitHub`<br>`* **Especificação:** BDD / Gherkin`<br>`* **Documentação:** Markdown`<br><br>`## 📂 Estrutura do Projeto`<br>`* docs/ — Planos de testes e checklists funcionais.`<br>`* features/ — Cenários de comportamento em Gherkin.`<br><br>`## 👨‍💻 Autor`<br>`Desenvolvido por **[Seu Nome]** durante a **Trilha QA Academy**.` |
+
+---
+
+#### 🚀 Como Enviar seu Projeto para Aprovação
+
+Após concluir o **Merge** do seu Pull Request na branch `main`, registre a entrega oficial do seu projeto:
+
+1. Acesse a aba **Issues** do repositório oficial da Trilha QA Academy:  
+   👉 **[Enviar Projeto na Aba Issues](https://github.com/AlexandreTI-AUT/trilha-qa-academy/issues)**
+2. Clique no botão **`New issue`**.
+3. Preencha o título seguindo o padrão:  
+   `[Entrega Sprint 06] Portfólio QA - Seu Nome Completo`
+4. Na descrição, informe o link do seu repositório público (`qa-portfolio-testes`) e o link do Pull Request mergeado, depois clique em **`Submit new issue`**.
+
+📹 **Assista à aula prática e passo a passo do Projeto (Módulo 5):**
+<br>
+[![Projeto Prático — Criando seu Repositório de Portfólio QA com README.md](https://img.youtube.com/vi/zxNG13AtfPA/maxresdefault.jpg)](https://youtu.be/zxNG13AtfPA)
