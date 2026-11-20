@@ -208,9 +208,15 @@ Para trabalhar com segurança no dia a dia, o Git organiza suas alterações em 
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `# 1. Conferir o arquivo em conflito (both modified)`<br>`git status`<br><br>`# 2. Após resolver no VS Code e salvar, marcar como resolvido`<br>`git add login.feature`<br><br>`# 3. Registrar o commit de resolução do conflito e enviar`<br>`git commit -m "fix: resolve conflito no cenario de login"`<br>`git push origin feat/cenarios-login-bdd` |
 
-📹 **Assista à aula prática sobre o Módulo 4:**
+📹 **Assista às aulas práticas sobre o Módulo 4:**
+
+**Parte 1 — Trabalhando com Branches Isoladas e Pull Requests (PR):**
 <br>
 [![Trabalhando com Branches Isoladas e Pull Requests (PR)](https://img.youtube.com/vi/kOW884Vk3kk/maxresdefault.jpg)](https://youtu.be/kOW884Vk3kk)
+
+**Parte 2 — Como Identificar e Resolver Conflitos de Merge no VS Code:**
+<br>
+[![Como Identificar e Resolver Conflitos de Merge no VS Code](https://img.youtube.com/vi/kqs8gFvsx_o/maxresdefault.jpg)](https://youtu.be/kqs8gFvsx_o)
 
 ---
 
