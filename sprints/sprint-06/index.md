@@ -210,8 +210,7 @@ Para trabalhar com segurança no dia a dia, o Git organiza suas alterações em 
 
 📹 **Assista à aula prática sobre o Módulo 4:**
 <br>
-
-> _(Espaço reservado para o link e thumbnail da vídeo-aula do Módulo 4)_
+[![Trabalhando com Branches Isoladas e Pull Requests (PR)](https://img.youtube.com/vi/kOW884Vk3kk/maxresdefault.jpg)](https://youtu.be/kOW884Vk3kk)
 
 ---
 
