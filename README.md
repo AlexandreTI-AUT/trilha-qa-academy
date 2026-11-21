@@ -34,6 +34,7 @@ O material é estruturado em **Sprints** (ciclos de aprendizado). Em cada Sprint
 - [Sprint 04: Testes de API REST, Arquitetura Backend e Postman na Prática](./sprints/sprint-04/) _(Disponível)_
 - [Sprint 05: SQL e Banco de Dados para QA: Guia Prático de Validação](./sprints/sprint-05/) _(Disponível)_
 - [Sprint 06: Versionamento com Git e GitHub para QA](./sprints/sprint-06/) _(Disponível)_
+- [Sprint 07: JavaScript para QA: Introdução à Lógica de Programação](./sprints/sprint-07/) _(Disponível)_
 
 ---
 
