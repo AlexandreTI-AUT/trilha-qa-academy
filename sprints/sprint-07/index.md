@@ -54,7 +54,7 @@ node 01-hello-qa.js
 
 📹 **Assista à aula prática e demonstração do Módulo 1:**
 <br>
-_(Espaço reservado para inserção do vídeo e thumbnail do Módulo 1)_
+[![Módulo 01: JavaScript para QA — Instalação do Node.js, VS Code e Primeiros Passos](https://img.youtube.com/vi/9RFx9MBM5Ss/maxresdefault.jpg)](https://youtu.be/9RFx9MBM5Ss)
 
 ---
 
