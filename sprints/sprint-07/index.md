@@ -114,7 +114,7 @@ console.log("Usuário apto para autenticar?", podeLogar);
 
 📹 **Assista à aula prática e demonstração do Módulo 2:**
 <br>
-_(Espaço reservado para inserção do vídeo e thumbnail do Módulo 2)_
+[![Módulo 02: JavaScript para QA — Variáveis, Tipos de Dados e Operadores Aplicados a Testes](https://img.youtube.com/vi/jTwW17PIS3c/maxresdefault.jpg)](https://youtu.be/jTwW17PIS3c)
 
 ---
 
