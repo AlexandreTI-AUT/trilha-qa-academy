@@ -155,7 +155,7 @@ if (statusCode === 200) {
 
 📹 **Assista à aula prática e demonstração do Módulo 3:**
 <br>
-_(Espaço reservado para inserção do vídeo e thumbnail do Módulo 3)_
+[![Módulo 03: JavaScript para QA — Estruturas Condicionais (if / else) na Automação](https://img.youtube.com/vi/-8fp3ZL98Oo/maxresdefault.jpg)](https://youtu.be/-8fp3ZL98Oo)
 
 ---
 
