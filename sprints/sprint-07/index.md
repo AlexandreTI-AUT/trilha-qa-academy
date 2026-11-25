@@ -153,9 +153,15 @@ if (statusCode === 200) {
    - Caso contrário (`> 1000`): exibir `"❌ Falha de SLA: Tempo de resposta acima do limite!"`.
 4. Altere o valor de `tempoRespostaMs` (ex.: `300`, `850`, `1500`) e rode o script para testar os três cenários.
 
-📹 **Assista à aula prática e demonstração do Módulo 3:**
+📹 **Assista às aulas práticas e demonstrações do Módulo 3:**
+
+**Aula 01 — Estruturas Condicionais (`if` / `else`) na Automação:**
 <br>
 [![Módulo 03: JavaScript para QA — Estruturas Condicionais (if / else) na Automação](https://img.youtube.com/vi/-8fp3ZL98Oo/maxresdefault.jpg)](https://youtu.be/-8fp3ZL98Oo)
+
+**Aula 02 — Na Prática: Por que só o `if` funcionou? Testando todos os cenários:**
+<br>
+[![Módulo 03: JavaScript para QA — Entendendo na Prática o if, else if e else](https://img.youtube.com/vi/-KUd0rsVWm4/maxresdefault.jpg)](https://youtu.be/-KUd0rsVWm4)
 
 ---
 
